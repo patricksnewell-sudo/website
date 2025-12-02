@@ -7,37 +7,37 @@
     <style>
       /* Set up the wrapper to hold both columns */
       .wrapper {
-  	position: relative; /* or position: static; */
-	max-width: 1300px;
+  	position: relative;
+	max-width: 1800px;
 	margin: 0 auto;
-	margin-left: 20px;
-	margin-top: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 40px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	overflow: auto; /* add overflow property to enable scrolling */
+	overflow: auto;
       }
 
       /* Style for left column */
       .left-column {
-        width: 50%;
-	max-width: 400px;
+        flex: 0 0 450px;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 30px;
         font-family: 'Cormorant', serif;
       }
       .name {
-        font-size: 26pt;
+        font-size: 36pt;
         font-weight: 500;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
       }
       .title {
-        font-size: 18pt;
+        font-size: 24pt;
         font-weight: 400;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
       }
       .projects {
-        font-size: 14pt;
+        font-size: 18pt;
         font-style: italic;
         margin-bottom: 10px;
       }
@@ -53,7 +53,7 @@
         padding-left: 0;
       }
       .projects ul li {
-        margin-bottom: 1px;
+        margin-bottom: 5px;
       }
       li {
         list-style-type: none;
@@ -61,16 +61,23 @@
 
       /* Style for right column */
       .right-column {
-        width: 50%;
-	max-width: 900px;
+        flex: 1;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 30px;
 	font-family: 'Cormorant', serif;
       }
+      
+      .right-column iframe {
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        aspect-ratio: 16/9;
+      }
+      
       .description {
-        font-size: 14pt;
+        font-size: 18pt;
         font-style: italic;
-        margin-bottom: 10px;
+        margin-top: 30px;
       }
 
       /* Clearfix */
@@ -81,11 +88,18 @@
       }
 
       /* Responsive layout */
-      @media screen and (max-width: 768px) {
-        .left-column, .right-column {
+      @media screen and (max-width: 1024px) {
+        .wrapper {
+          flex-direction: column;
+        }
+        
+        .left-column {
+          flex: 0 0 auto;
           width: 100%;
-          float: none;
-          margin-left: 0;
+        }
+        
+        .right-column {
+          width: 100%;
         }
       }
 
@@ -100,6 +114,7 @@
         <div class="projects">
           <ul>
             <li><a href="murdaugh.html">Murdaugh Murders</a></li>
+            <li><a href="freediver.html">Freediver</a></li>
             <li><a href="bugout.html">Bug Out</a></li>
             <li><a href="lularich.html">LuLaRich</a></li>
             <li><a href="pharmacist.html">The Pharmacist</a></li>
@@ -113,26 +128,20 @@
 
       <!-- Right column -->
 <div class="right-column">
-  <iframe width="600" height="338" src="https://www.youtube.com/embed/nJgkwIHp1pc" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/aib52bSEpCQ" frameborder="0" allowfullscreen></iframe>
   <div class="description">  
     <p>
       <b>LuLaRich</b>
       <br>
-      <br>Directed by - Jenner Furst and Julia Willoughby Nason
+      <br>2021 | Amazon Prime
       <br>
-      <br>Executive Producer - Mike Gasparro, Blye Faust
-      <br>
-      <br>Series Producer - Lana Barkin
-      <br>
-      <br>Story Producer - Patrick Newell, Rachel Bozich
-      <br>
-      <br>Edited by - Devin Concannon, Sarah Devorkin, Princess A. Hairston, Betsy Kagen, Deijah Lee-Carroll
+      <br>Story Producer
       <br>
       <br>
       <br>
     </p>
   </div>
 </div>
-
+    </div>
   </body>
 </html>
