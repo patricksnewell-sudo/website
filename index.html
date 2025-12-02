@@ -8,37 +8,37 @@
     <style>
       /* Set up the wrapper to hold both columns */
       .wrapper {
-  	position: relative; /* or position: static; */
-	max-width: 1300px;
+  	position: relative;
+	max-width: 1800px;
 	margin: 0 auto;
-	margin-left: 20px;
-	margin-top: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 40px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	overflow: auto; /* add overflow property to enable scrolling */
+	overflow: auto;
       }
 
       /* Style for left column */
       .left-column {
-        width: 50%;
-	max-width: 400px;
+        flex: 0 0 450px;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 30px;
         font-family: 'Cormorant', serif;
       }
       .name {
-        font-size: 26pt;
+        font-size: 36pt;
         font-weight: 500;
-        margin-bottom: 0px;
+        margin-bottom: 5px;
       }
       .title {
-        font-size: 18pt;
+        font-size: 24pt;
         font-weight: 400;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
       }
       .projects {
-        font-size: 14pt;
+        font-size: 18pt;
         font-style: italic;
         margin-bottom: 10px;
       }
@@ -54,7 +54,7 @@
         padding-left: 0;
       }
       .projects ul li {
-        margin-bottom: 1px;
+        margin-bottom: 5px;
       }
       li {
         list-style-type: none;
@@ -68,18 +68,32 @@
         overflow: hidden;
       }
 
-      /* Style for right column */
+      /* Style for right column - Grid Layout */
       .right-column {
-        width: 50%;
-	max-width: 900px;
+        flex: 1;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
       }
-      .project-image {
+      
+      .project-image-link {
         display: block;
-        margin-bottom: 50px;
-        max-width: 100%;
-        height: auto;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+      }
+      
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      
+      .project-image:hover {
+        transform: scale(1.05);
       }
 
       /* Clearfix */
@@ -90,11 +104,32 @@
       }
 
       /* Responsive layout */
-      @media screen and (max-width: 768px) {
-        .left-column, .right-column {
+      @media screen and (max-width: 1024px) {
+        .wrapper {
+          flex-direction: column;
+        }
+        
+        .left-column {
+          flex: 0 0 auto;
           width: 100%;
-          float: none;
-          margin-left: 0;
+        }
+        
+        .right-column {
+          width: 100%;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media screen and (max-width: 768px) {
+        .right-column {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+      }
+      
+      @media screen and (max-width: 480px) {
+        .right-column {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -122,16 +157,33 @@
         </div>
       </div>
 
-      <!-- Right column -->
+      <!-- Right column with Grid -->
       <div class="right-column">
-      <a href="http://patricknewell.xyz/murdaugh.html"><img class="project-image" src="http://patricknewell.xyz/murdaugh.jpg"></a>
-      <a href="freediver.html"><img class="project-image" src="http://patricknewell.xyz/freediver.jpg"></a>
-      <a href="bugout.html"><img class="project-image" src="http://patricknewell.xyz/bugout.jpg"></a>
-      <a href="lularich.html"><img class="project-image" src="http://patricknewell.xyz/lularich.jpg"></a>
-      <a href="pharmacist.html"><img class="project-image" src="http://patricknewell.xyz/pharmacist.jpg"></a>
-      <a href="fyrefraud.html"><img class="project-image" src="http://patricknewell.xyz/fyrefraud.jpg"></a>
-      <a href="trayvon.html"><img class="project-image" src="http://patricknewell.xyz/trayvon.jpg"></a>
-      <a href="kalief.html"><img class="project-image" src="http://patricknewell.xyz/kalief.jpg"></a>
+        <a href="http://patricknewell.xyz/murdaugh.html" class="project-image-link">
+          <img class="project-image" src="http://patricknewell.xyz/murdaugh.jpg" alt="Murdaugh Murders">
+        </a>
+        <a href="freediver.html" class="project-image-link">
+          <img class="project-image" src="http://patricknewell.xyz/freediver.jpg" alt="Freediver">
+        </a>
+        <a href="bugout.html" class="project-image-link">
+          <img class="project-image" src="http://patricknewell.xyz/bugout.jpg" alt="Bug Out">
+        </a>
+        <a href="lularich.html" class="project-image-link">
+          <img class="project-image" src="http://patricknewell.xyz/lularich.jpg" alt="LuLaRich">
+        </a>
+        <a href="pharmacist.html" class="project-image-link">
+          <img class="project-image" src="http://patricknewell.xyz/pharmacist.jpg" alt="The Pharmacist">
+        </a>
+        <a href="fyrefraud.html" class="project-image-link">
+          <img class="project-image" src="http://patricknewell.xyz/fyrefraud.jpg" alt="Fyre Fraud">
+        </a>
+        <a href="trayvon.html" class="project-image-link">
+          <img class="project-image" src="http://patricknewell.xyz/trayvon.jpg" alt="RIP: The Trayvon Martin Story">
+        </a>
+        <a href="kalief.html" class="project-image-link">
+          <img class="project-image" src="http://patricknewell.xyz/kalief.jpg" alt="TIME: The Kalief Browder Story">
+        </a>
+      </div>
     </div>
   </body>
 </html>
