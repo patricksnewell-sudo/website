@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Patrick Newell</title>
+    <link href="https://fonts.googleapis.com/css?family=Cormorant:300,300i,400,400i,500,500i&display=swap" rel="stylesheet">
+    <style>
+      /* Set up the wrapper to hold both columns */
+      .wrapper {
+  	position: relative; /* or position: static; */
+	max-width: 1300px;
+	margin: 0 auto;
+	margin-left: 20px;
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	overflow: auto; /* add overflow property to enable scrolling */
+      }
+
+      /* Style for left column */
+      .left-column {
+        width: 50%;
+	max-width: 400px;
+        box-sizing: border-box;
+        padding: 20px;
+        font-family: 'Cormorant', serif;
+      }
+      .name {
+        font-size: 26pt;
+        font-weight: 500;
+        margin-bottom: 0px;
+      }
+      .title {
+        font-size: 18pt;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+      .projects {
+        font-size: 14pt;
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+      .projects a {
+        color: #000;
+        text-decoration: none;
+      }
+      .projects a:hover {
+        text-decoration: underline;
+      }
+      .projects ul {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      .projects ul li {
+        margin-bottom: 1px;
+      }
+      li {
+        list-style-type: none;
+      }
+
+      /* Style for right column */
+      .right-column {
+        width: 50%;
+	max-width: 900px;
+        box-sizing: border-box;
+        padding: 20px;
+	font-family: 'Cormorant', serif;
+      }
+      .description {
+        font-size: 14pt;
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+
+      /* Clearfix */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      /* Responsive layout */
+      @media screen and (max-width: 768px) {
+        .left-column, .right-column {
+          width: 100%;
+          float: none;
+          margin-left: 0;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Left column -->
+      <div class="left-column">
+        <div class="name">Patrick Newell</div>
+        <div class="title">Editor | Producer</div>
+        <div class="projects">
+          <ul>
+            <li><a href="murdaugh.html">Murdaugh Murders</a></li>
+            <li><a href="bugout.html">Bug Out</a></li>
+            <li><a href="lularich.html">LuLaRich</a></li>
+            <li><a href="pharmacist.html">The Pharmacist</a></li>
+            <li><a href="fyrefraud.html">Fyre Fraud</a></li>
+            <li><a href="trayvon.html">RIP: The Trayvon Martin Story</a></li>
+            <li style="margin-bottom: 30px;"><a href="kalief.html">TIME: The Kalief Browder Story</a></li>
+	    <li><a href="mailto:patrick.s.newell@gmail.com"; font-style: italic;">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right column -->
+<div class="right-column">
+  <iframe width="600" height="338" src="https://www.youtube.com/embed/1gQ5dA-342g" frameborder="0" allowfullscreen></iframe>
+  <div class="description">  
+    <p>
+      <b>Bug Out</b>
+      <br>
+      <br>Directed by - Ben Feldman
+      <br>
+      <br>Executive Producer - Mike Gasparro, Jenner Furst, Julia Willoughby Nason
+      <br>
+      <br>Story Producer - Patrick Newell
+      <br>
+      <br>Edited by - Devin Concannon, David Miller, Steve Nemsick, Derek Schultz, Pierre Stefanos
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </p>
+  </div>
+</div>
+
+  </body>
+</html>
